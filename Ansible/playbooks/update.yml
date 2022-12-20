@@ -1,0 +1,7 @@
+---
+- name: OS updates
+  hosts: all
+  tasks:
+   - name: apply updates
+     apt: upgrade=full
+  become: yes
