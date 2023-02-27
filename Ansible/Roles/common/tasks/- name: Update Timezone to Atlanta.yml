@@ -1,0 +1,9 @@
+- name: Update Timezone to Atlanta
+  become: yes
+  copy: content="America/Atlanta\n" dest=/etc/timezone owner=root group=root mode=0644
+  register: timezone 
+
+- name: reconfigure Timezone data (if changed)
+  become: yes
+  shell: dpkg-reconfigure -f noninteractive tzdata 
+  when: timezone.change  
