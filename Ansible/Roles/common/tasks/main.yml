@@ -2,19 +2,24 @@
 - name: create the ansible user account
   become: yes
   user: name=ansible append=yes state=present createhome=yes shell=/bin/bash
-  
 - name: allow 'ansible' to use sudo without needing a password
   become: yes
   lineinfile:
-      dest: /etc/sudoers
-      line: 'ansible ALL=(ALL) NOPASSWD: ALL'
-      validate: 'visudo -cf %s'
-
-
+    dest: /etc/sudoers
+    line: "ansible ALL=(ALL) NOPASSWD: ALL"
+    validate: visudo -cf %s
 - name: Set Authorized key taken from file
   become: yes
   authorized_key:
     user: ansible
     state: present
     key: "{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
-    
+- name: Update Timezone to Atlanta
+  become: yes
+  copy: content="America/Atlanta\n" dest=/etc/timezone owner=root group=root
+    mode=0644
+  register: timezone
+- name: reconfigure Timezone data (if changed)
+  become: yes
+  shell: dpkg-reconfigure -f noninteractive tzdata
+  when: timezone.change
