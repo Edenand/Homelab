@@ -28,3 +28,18 @@
   become: yes 
   shell: dpkg-reconfigure -f noninteractive tzdata
   when: timezone.changed 
+
+- name: dpkg --configure -a 
+  become: yes
+  shell: dpkg --configure -a 
+  tags: 
+    - packages 
+    - common 
+    - dpkg-reconf
+
+- name: install system utils, packages
+  become: yes
+  package: 
+  name:
+    - apt-transport-https
+    
