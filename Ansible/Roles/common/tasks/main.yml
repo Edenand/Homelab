@@ -42,4 +42,13 @@
   package: 
   name:
     - apt-transport-https
-    
+    - tasksel 
+    - cockpit
+    - python3
+    - idle3 
+    - python3-pip
+    - libfuse2
+    - nmap
+    - rename 
+    - tailscale 
+     
