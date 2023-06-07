@@ -1,0 +1,11 @@
+version: '3'
+services:
+  mealie:
+    image: hkotel/mealie:latest
+    ports:
+      - 9925:80 
+    volumes:
+      - ./data:/app/data
+    environment:
+      - DATABASE_URL=sqlite:////app/data/mealie.db
+    restart: always 

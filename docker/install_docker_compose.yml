@@ -1,0 +1,17 @@
+---
+- name: Install Docker Compose
+  hosts: localhost
+  gather_facts: false
+  become: true
+
+  tasks:
+    - name: Install required packages
+      apt:
+        name: ['python3-pip', 'curl']
+        state: present
+
+    - name: Install Docker Compose
+      pip:
+        name: docker-compose
+        executable: pip3
+        state: present
