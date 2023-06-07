@@ -4,5 +4,5 @@
   connection: ssh
   become: yes
   roles:
-    - ../roles/install_docker
+    - /home/katelyna/CDW-homelab/Ansible/roles/install_docker
  

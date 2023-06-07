@@ -310,6 +310,10 @@ INFO: 07-Jun-23 17:03:57 	None
 INFO: 07-Jun-23 17:33:57 	None
 INFO: 07-Jun-23 18:03:57 	None
 INFO: 07-Jun-23 18:33:57 	None
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> d7c9c51 (mix of modified, deleted, and untracked files)
 INFO: 07-Jun-23 19:03:57 	None
 INFO: 07-Jun-23 19:33:57 	None
 INFO: 07-Jun-23 20:03:57 	None
@@ -8680,6 +8684,7 @@ INFO: 18-Jan-25 00:02:08 	None
 INFO: 18-Jan-25 00:32:08 	None
 INFO: 18-Jan-25 01:02:08 	None
 INFO: 18-Jan-25 01:32:08 	None
+<<<<<<< HEAD
 INFO: 18-Jan-25 02:02:08 	None
 INFO: 18-Jan-25 02:32:08 	None
 INFO: 18-Jan-25 03:02:08 	None
@@ -9845,3 +9850,7 @@ INFO: 05-Feb-25 13:25:13 	None
 INFO: 05-Feb-25 13:55:13 	None
 INFO: 05-Feb-25 14:25:13 	None
 INFO: 05-Feb-25 14:55:13 	None
+=======
+>>>>>>> a386872 (docker and mealie playbooks)
+=======
+>>>>>>> d7c9c51 (mix of modified, deleted, and untracked files)
