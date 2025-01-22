@@ -1,7 +1,9 @@
 services:
   homarr:
     container_name: homarr
-    image: ghcr.io/homarr-labs/homarr:latest
+    build:
+      context: .  # This points to the directory where your Dockerfile is located
+    image: homarr:latest  # Local image tag to use after building
     restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
