@@ -1,12 +1,16 @@
 {
   "name": "homelab-dashboard",
   "version": "1.0.0",
-  "description": "This repository contains the setup and configuration for a self-hosted **Homelab Dashboard** using [Homarr](https://homarr.dev). The dashboard allows for easy management and monitoring of various self-hosted services.",
+  "description": "This repository contains the setup and configuration for a self-hosted Homelab Dashboard using Homarr. The dashboard allows for easy management and monitoring of various self-hosted services.",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
+  "keywords": ["homelab", "dashboard", "self-hosted", "homarr"],
   "author": "Katelyna",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
