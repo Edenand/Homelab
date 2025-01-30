@@ -5,6 +5,7 @@ This repository contains the setup and configuration for a self-hosted **Homelab
 ---
 
 ## 🚀 **Project Features**
+
 - **Homarr Dashboard** for centralized management of self-hosted services.
 - **Docker Compose** configuration for streamlined container orchestration.
 - **Node.js** dependencies managed via `package.json` and `npm`.
@@ -16,6 +17,7 @@ This repository contains the setup and configuration for a self-hosted **Homelab
 ---
 
 ## 📁 **Repository Structure**
+
 ```plaintext
 .
 ├── .github/
@@ -30,3 +32,4 @@ This repository contains the setup and configuration for a self-hosted **Homelab
 #homelab-dashboard
 
 
+```
