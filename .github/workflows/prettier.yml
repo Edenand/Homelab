@@ -20,7 +20,7 @@ jobs:
           node-version: "18"
 
       - name: Install Prettier
-        run: npm install --global prettier
+        run: npm install --global prettier@3.4.2  # Pinning Prettier version
 
       - name: Run Prettier
-        run: prettier --check .
+        run: npx prettier --check .
