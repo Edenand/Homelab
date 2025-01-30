@@ -1,0 +1,43 @@
+name: Snyk Security Scan
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * 1'  # Runs every Monday at midnight UTC
+
+jobs:
+  snyk-security:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install  # Required for scanning dependencies
+
+      - name: Install Snyk CLI
+        run: npm install -g snyk
+
+      - name: Authenticate Snyk
+        run: snyk auth ${{ secrets.SNYK_TOKEN }}
+
+      - name: Run Snyk for dependency scanning
+        run: snyk test --severity-threshold=high
+
+      - name: Run Snyk for Docker image scanning (if using Docker)
+        run: snyk container test your-docker-image:latest --severity-threshold=high
+        continue-on-error: true
+
+      - name: Monitor Snyk for continuous tracking
+        run: snyk monitor
