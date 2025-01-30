@@ -30,7 +30,7 @@ jobs:
         run: npm install -g snyk
 
       - name: Authenticate Snyk
-        run: snyk auth ${{ secrets.SNYK_TOKEN }}
+        run: echo "${{ secrets.SNYK_TOKEN }}" | snyk auth
 
       - name: Run Snyk for dependency scanning
         run: snyk test --severity-threshold=high
