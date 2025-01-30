@@ -2,13 +2,13 @@ services:
   homarr:
     container_name: homarr
     build:
-      context: .  # This points to the directory where your Dockerfile is located
-    image: homarr:latest  # Local image tag to use after building
+      context: . # This points to the directory where your Dockerfile is located
+    image: homarr:latest # Local image tag to use after building
     restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./homarr/appdata:/appdata
     environment:
-      - SECRET_ENCRYPTION_KEY=${SECRET_ENCRYPTION_KEY}  # Uses environment variable instead of hardcoding
+      - SECRET_ENCRYPTION_KEY=${SECRET_ENCRYPTION_KEY} # Uses environment variable instead of hardcoding
     ports:
       - "7575:7575"
