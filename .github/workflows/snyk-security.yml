@@ -1,3 +1,4 @@
+---
 name: Snyk Security Scan
 
 on:
@@ -32,13 +33,15 @@ jobs:
       - name: Authenticate Snyk
         env:
           SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-        run: snyk auth $SNYK_TOKEN
+        run: snyk auth "$SNYK_TOKEN"
 
       - name: Run Snyk for dependency scanning
         run: snyk test --severity-threshold=high
 
       - name: Run Snyk for Docker image scanning (if using Docker)
-        run: snyk container test your-docker-image:latest --severity-threshold=high
+        run: |
+          snyk container test your-docker-image:latest \
+            --severity-threshold=high
         continue-on-error: true
 
       - name: Monitor Snyk for continuous tracking
