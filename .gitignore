@@ -3,3 +3,17 @@ homarr/appdata/db/db.sqlite
 node_modules/
 node_modules/
 Ansible/playbooks/data/.secret
+
+# --- Ansible runtime/data (do not commit) ---
+Ansible/playbooks/data/
+*.db
+*.log
+.secret
+.env
+
+# --- Ansible runtime/data (do not commit) ---
+Ansible/playbooks/data/
+*.db
+*.log
+.secret
+.env
